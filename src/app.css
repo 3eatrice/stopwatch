@@ -1,79 +1,166 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  font-family: 'Poppins', sans-serif; 
+  background-color: #F8F7F0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; 
+}
+.invalid {
+  border-color: red;
+  background-color: #ffe6e6;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.outer-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+.container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  box-shadow: 0px 10px 20px #0000001A;
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.timer-heading {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  text-align: left;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: 52px; 
+  color: #005095;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.circle-container {
+  position: relative;
+  margin-top: 100px;
+  width: 215px;
+  height: 215px;
+  margin: 10 auto 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+.fill-none {
+  fill: none;
+}
+.stroke-default {
+  stroke: #f8f7f0;
+}
+.stroke-blue {
+  stroke: #005095;
+}
+.transition-all {
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.background {
+  stroke: #F8F7F0;
+}
+
+input.timer-input {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #005095;
+  border-radius: 6px;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #005095;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  top: 52%;
+}
+
+input.timer-input:focus {
+  border-color: #005095;
+}
+
+input.timer-input[disabled] {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+input.timer-input::-webkit-outer-spin-button,
+input.timer-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+input.timer-input[type="number"] {
+  -moz-appearance: textfield;
+} 
+
+.start-pause-image {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.reset {
+  color: #AEBE38;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.backgroundpicture {
+  position: absolute;
+  top: -650px;
+  left: 55%;
+  width: 1494px;
+  height: 1645px;
+  z-index: -1;
+  background-image: url('./assets/kylee-alons-suQ-D-9dmVU-unsplash.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.completed {
+  animation: fadeColor 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeColor {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
-  a:hover {
-    color: #747bff;
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
   }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
